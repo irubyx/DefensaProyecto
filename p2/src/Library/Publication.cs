@@ -33,5 +33,17 @@ namespace Ucu.Poo.Defense
         {
             this.items.Remove(item);
         }
+
+        public string AsText()
+        {
+            string result = string.Empty;
+
+            foreach (PublicationItem publicationItem in Items)
+            {
+                result = result + $"{publicationItem.Quantity} de '{publicationItem.Material.Name}' a {publicationItem.Price}\n";
+            }
+
+            return result;
+        }
     }
 }
